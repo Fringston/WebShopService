@@ -38,6 +38,7 @@ public class HistoryController {
     private CartService cartService;
 
     /**
+     * Get /webshop/history
      * Hämtar alla historikposter från webbshopen.
      * Användare med olika roller har tillgång till denna metod.
      * @return ResponseEntity med en lista av historikposter om framgångsrikt, annars INTERNAL_SERVER_ERROR.
@@ -49,20 +50,11 @@ public class HistoryController {
     }
 
     /**
+     * Get /webshop/history/currentUserHistory
      * Hämtar alla köpta artiklar för den aktuella användaren.
      * Användare med olika roller har tillgång till denna metod.
      * @return ResponseEntity med en lista av köpta artiklar om framgångsrikt, annars INTERNAL_SERVER_ERROR.
      */
-//    @GetMapping("/currentUserHistory")
-//    private ResponseEntity<List<Article>> getCurrentUserPurchasedArticles() {
-//        try {
-//            List<Article> purchasedArticles = historyService.getUserHistory();
-//            return ResponseEntity.ok(purchasedArticles);
-//        } catch (Exception e) {
-//            e.printStackTrace();  // Logga eller skriv ut detaljer om exception
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//        }
-//    }
     @GetMapping("/currentUserHistory")
     private ResponseEntity<List<History>> getCurrentUserPurchasedArticles() {
         try {
@@ -75,6 +67,7 @@ public class HistoryController {
     }
 
     /**
+     * Post /webshop/history/purchase
      * Utför en köptransaktion för den aktuella användaren baserat på innehållet i varukorgen.
      * Endast användare med rollen "USER" har tillgång till denna metod.
      * @return ResponseEntity med en meddelandesträng om att köpet genomfördes framgångsrikt.
