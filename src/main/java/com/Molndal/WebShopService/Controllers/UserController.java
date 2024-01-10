@@ -31,6 +31,7 @@ public class UserController {
     private UserService userService;
 
     /**
+     * Get /webshop/user
      * Hämtar information om den inloggade användaren.
      * Endast inloggade användare har tillgång till denna metod.
      * @return ResponseEntity med lista av information om den inloggade användaren om framgångsrikt, annars INTERNAL_SERVER_ERROR.
