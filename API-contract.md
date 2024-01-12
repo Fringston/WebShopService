@@ -5,17 +5,18 @@
 ### GET /webshop/articles
 - Returns a list of all articles.  
 
-#### Authentication:
+### Authentication:
 
 No authentication required.
 
-#### Request Parameters
+### Request Parameters
 
 No request parameters required.
 
-#### Responses:
+### Responses:
 
 **200 OK**
+
 If the request is successful, the endpoint will return HTTP status code 200, and a JSON array of objects representing all articles.
 
 Example: 
@@ -49,15 +50,15 @@ If there is a server error while processing the request, the endpoint will retur
 ### GET /webshop/articles/{id}
 - Returns a specific article by its ID.  
 
-#### Authentication:
+### Authentication:
 
 No authentication required.
 
-#### Request Parameters:
+### Request Parameters:
 
 - id (integer): The ID of the article to be returned.
 
-#### Responses:
+### Responses:
 
 **200 OK**
 
@@ -90,11 +91,11 @@ If there is a server error while processing the request, the endpoint will retur
 
 - Creates a new article.
 
-#### Authentication:
+### Authentication:
 
 Requires admin role.
 
-#### Request Body:
+### Request Body:
 
 Accepts a JSON object with the following properties:
 
@@ -111,7 +112,7 @@ Example:
     "description": "A yellow fruit"
 }
 ```
-#### Responses:
+### Responses:
 
 **201 Created**
 
@@ -140,13 +141,13 @@ If the user is not authenticated or does not have the admin role, the endpoint w
 ### PATCH /webshop/articles/{id}
 - Updates a specific article by its ID.
 
-#### Authentication:
+### Authentication:
 Requires admin role.  
 
-#### Request Parameters:
+### Request Parameters:
 id (integer): The ID of the article to be updated.
 
-#### Request Body:
+### Request Body:
 Accepts a JSON object with the following properties: 
 
 - `name` (string, optional): The new name of the article.
@@ -163,7 +164,7 @@ Example:
 }
 ```
 
-#### Responses:
+### Responses:
 
 **200 OK**
 
@@ -200,13 +201,13 @@ If there is a server error while processing the request, the endpoint will retur
 ### DELETE /webshop/articles/{id}
 - Deletes a specific article by its ID. 
 
-#### Authentication:
+### Authentication:
 Requires admin role.  
 
-#### Request Parameters:
+### Request Parameters:
 id (integer): The ID of the article to be deleted.
 
-#### Responses:
+### Responses:
 
 **200 OK**
 
@@ -229,10 +230,92 @@ If there is a server error while processing the request, the endpoint will retur
 ## Auth Endpoints:
 
 ### POST /webshop/auth/register
-- Registers a new user. Requires a RegistrationPayload object in the request body.
+- Registers a new user. 
+
+#### Authentication:
+No authentication required.  
+
+#### Request Body:
+Accepts a JSON object with the following properties:  
+
+- `username` (string): The username of the user.
+- `password` (string): The password of the user.
+
+Example:
+
+```json
+{
+    "username": "newUser",
+    "password": "password123"
+}
+```
+#### Responses:
+**200 OK**
+
+If the user is successfully registered, the endpoint will return HTTP status code 200, and a JSON object representing the new user.  
+
+Example:
+
+```json
+{
+"id": 1,
+"username": "newUser",
+"password": "password123"
+}
+```
+
+**400 Bad Request**
+
+If the request body is not valid, or the username already exists, the endpoint will return HTTP status code 400.  
+
+**500 Internal Server Error**
+
+If there is a server error while processing the request, the endpoint will return HTTP status code 500
+
 ---
 ### POST /webshop/auth/login
-- Logs in a user. Requires a RegistrationPayload object in the request body.  
+- Logs in a user.
+
+#### Authentication
+No authentication required.  
+
+#### Request Body
+Accepts a JSON object with the following properties:  
+- username (string): The username of the user.
+- password (string): The password of the user.
+
+Example:
+
+```json
+{
+    "username": "existingUser",
+    "password": "password123"
+}
+```
+#### Responses
+
+**200 OK**  If the user is successfully logged in, the endpoint will return HTTP status code 200, and a JSON object representing the logged in user and a JWT token.  
+
+Example:
+
+```json
+{
+  "user": {
+    "id": 1,
+    "username": "existingUser",
+    "password": "password123"
+  },
+  "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+}
+```
+
+**400 Bad Request**
+
+If the request body is not valid, or the username does not exist, or the password is incorrect, the endpoint will return HTTP status code 400.  
+
+**500 Internal Server**
+
+Error  If there is a server error while processing the request, the endpoint will return HTTP status code 500.
 
 
 ---
