@@ -9,7 +9,7 @@
 
 No authentication required.
 
-### Request Parameters
+### Request Parameters:
 
 No request parameters required.
 
@@ -118,7 +118,7 @@ Example:
 
 If the article is successfully created, the endpoint will return HTTP status code 201, and a JSON object representing the new article.
 
-Exemple: 
+Example: 
 
 ```json
 {
@@ -276,10 +276,10 @@ If there is a server error while processing the request, the endpoint will retur
 ### POST /webshop/auth/login
 - Logs in a user.
 
-#### Authentication
+#### Authentication:
 No authentication required.  
 
-#### Request Body
+#### Request Body:
 Accepts a JSON object with the following properties:  
 - `username` (string): The username of the user.
 - `password` (string): The password of the user.
@@ -292,11 +292,11 @@ Example:
     "password": "password123"
 }
 ```
-#### Responses
+#### Responses:
 
 **200 OK**  
 
-If the user is successfully logged in, the endpoint will return HTTP status code 200, and a JSON object representing the logged in user and a JWT token.  
+If the user is successfully logged in, the endpoint will return HTTP status code 200, and a JSON object representing the logged-in user and a JWT token.  
 
 Example:
 
