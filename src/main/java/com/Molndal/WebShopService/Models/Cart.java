@@ -30,7 +30,9 @@ public class Cart {
     @JsonManagedReference
     private Set<CartItem> cartItems;
 
+    @Transient
     private String username;
+
     private int totalCost;
 
     @JsonProperty("username")

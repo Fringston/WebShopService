@@ -38,6 +38,7 @@ public class User implements UserDetails {
     private String username;
 
     private String password;
+
     /**
      * Mängd roller (auktoriteter) tilldelade användaren.
      */
