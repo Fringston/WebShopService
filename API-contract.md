@@ -56,7 +56,7 @@ No authentication required.
 
 ### Request Parameters:
 
-- id (integer): The ID of the article to be returned.
+- `id` (Long): The ID of the article to be returned.
 
 ### Responses:
 
@@ -145,7 +145,7 @@ If the user is not authenticated or does not have the admin role, the endpoint w
 Requires admin role.  
 
 ### Request Parameters:
-id (integer): The ID of the article to be updated.
+- `id` (Long): The ID of the article to be updated.
 
 ### Request Body:
 Accepts a JSON object with the following properties: 
@@ -205,7 +205,7 @@ If there is a server error while processing the request, the endpoint will retur
 Requires admin role.  
 
 ### Request Parameters:
-id (integer): The ID of the article to be deleted.
+- `id` (Long): The ID of the article to be deleted.
 
 ### Responses:
 
@@ -390,7 +390,7 @@ If there is a server error while processing the request, the endpoint will retur
 Requires user role.  
 
 ### Request Parameters:
-- `id` (integer): The ID of the shopping cart to be returned.
+- `id` (Long): The ID of the shopping cart to be returned.
 
 ### Responses:
 
@@ -439,7 +439,7 @@ If there is a server error while processing the request, the endpoint will retur
 Requires user role.  
 
 ### Request Parameters:
-- `id` (integer): The ID of the shopping cart where the article will be added.
+- `id` (Long): The ID of the shopping cart where the article will be added.
 
 ### Request Body:
 Accepts a JSON object with the following properties:  
@@ -510,8 +510,8 @@ If there is a server error while processing the request, the endpoint will retur
 Requires user role.
 
 ### Request Parameters:
-- `cartId` (integer): The ID of the shopping cart where the article will be updated.
-- `articleId` (integer): The ID of the article to be updated.
+- `cartId` (Long): The ID of the shopping cart where the article will be updated.
+- `articleId` (Long): The ID of the article to be updated.
 - `quantity` (integer): The new quantity of the article.
 
 ### Responses:
@@ -569,8 +569,8 @@ If there is a server error while processing the request, the endpoint will retur
 Requires user role.
 
 ### Request Parameters:
-- `cartId` (integer): The ID of the shopping cart where the article will be removed.
-- `articleId` (integer): The ID of the article to be removed.
+- `cartId` (Long): The ID of the shopping cart where the article will be removed.
+- `articleId` (Long): The ID of the article to be removed.
 
 ### Responses:
 

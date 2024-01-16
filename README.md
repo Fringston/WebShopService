@@ -9,6 +9,8 @@ The application will automatically create an admin account if it does not alread
 
 **JavaDoc** can be found here: *WebShopServie/index.HTML*
 
+---
+
 ## Functionality
 ### User functionality
 **All users can:**
@@ -29,6 +31,8 @@ The application will automatically create an admin account if it does not alread
 - See all historic shopping carts.
 - See all users.
 
+---
+
 ## Installation
 
 Before you can start this project, you must follow these steps:
@@ -36,6 +40,8 @@ Before you can start this project, you must follow these steps:
 - Download and install IntelliJ IDEA or your preferred IDE.
 - Download and install MySQL and MySQL Workbench.
 - Clone this repository to your local machine.
+
+---
 
 ## Usage
 
@@ -52,6 +58,7 @@ Before you can start this project, you must follow these steps:
 - Open your IDE and run the Main class to start the application.
 - Follow the instructions in the console to use the web-shop.
 
+---
 
 ## Dependencies:
 
@@ -64,6 +71,7 @@ Before you can start this project, you must follow these steps:
 - Spring Boot DevTools
 - org.json
 
+---
 
 ## Credits
 
@@ -72,6 +80,7 @@ Before you can start this project, you must follow these steps:
 - **[Jafar Hussein](https://github.com/Jafar-Hussein)**
 - **[Fredrik Rinstad](https://github.com/fringston)**
 
+---
 
 ## License
 
